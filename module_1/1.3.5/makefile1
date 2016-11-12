@@ -1,0 +1,10 @@
+all: exe lib
+
+exe: solution.c lib
+	gcc solution.c -ldl -o solution
+lib: shared.c
+	gcc -shared shared.c -o libShared.so
+
+clean:
+	-rm solution libShared.so 2>/dev/null
+
